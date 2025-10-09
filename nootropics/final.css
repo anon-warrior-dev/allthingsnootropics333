@@ -1,0 +1,661 @@
+/* final.css — complete responsive & polished stylesheet
+   - Mobile-first, fluid typography, accessible contrasts
+   - Footer centered and professional
+   - Intelligent responsive image rules (aspect-ratio, srcset-friendly)
+   - Larger hit targets for buttons, reduced-motion support, print rules
+   - Includes Subtle visual polish: soft gradients, refined shadows
+   Drop-in replacement for previous final.css. */
+
+:root {
+  --bg-top: #eaf6fb;
+  --bg-bottom: #ffffff;
+  --brand-blue: #0b61b2;
+  --brand-teal: #0ea5a3;
+  --accent-purple: #7c5cff;
+  --muted: #505b66;
+  --card: #ffffff;
+  --soft: #f6fbff;
+  --btn-radius: 12px;
+  --max-width: 1200px;
+  --text: #0f172a;
+  --shadow-1: 0 8px 28px rgba(10, 25, 45, 0.06);
+  --shadow-2: 0 14px 44px rgba(10, 25, 45, 0.08);
+  --focus-ring: rgba(14, 165, 163, 0.18);
+  --glass: rgba(255, 255, 255, 0.6);
+  --gap: 1rem;
+  --bp-sm: 520px;
+  /* phones */
+  --bp-md: 768px;
+  /* small tablets */
+  --bp-lg: 980px;
+  /* desktop */
+}
+
+/* === RESET & BASE (mobile-first) === */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0
+}
+
+html,
+body {
+  height: 100%
+}
+
+body {
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial;
+  background: linear-gradient(180deg, var(--bg-top), var(--bg-bottom));
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.6;
+  font-size: 16px;
+  padding: 1rem;
+}
+
+/* fluid type scale */
+h1 {
+  font-size: clamp(1.5rem, 2.6vw, 2.6rem);
+  line-height: 1.05
+}
+
+h2 {
+  font-size: clamp(1.1rem, 2.2vw, 1.7rem)
+}
+
+.section h3 {
+  font-size: clamp(1rem, 1.8vw, 1.35rem)
+}
+
+.container {
+  max-width: var(--max-width);
+  margin: 1rem auto;
+  padding: 1rem;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(255, 255, 255, 0.99));
+  border-radius: 12px;
+  box-shadow: var(--shadow-1);
+  border: 1px solid rgba(10, 25, 45, 0.03);
+}
+
+/* Top nav */
+.compound-top-nav {
+  display: flex;
+  gap: .6rem;
+  align-items: center;
+  padding: .5rem;
+  border-radius: 10px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.5));
+  border: 1px solid rgba(8, 24, 48, 0.04);
+  position: sticky;
+  top: 12px;
+  z-index: 1200;
+  backdrop-filter: blur(6px)
+}
+
+.compound-top-nav .btn {
+  padding: .55rem .9rem;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: .4rem
+}
+
+/* links */
+a {
+  color: var(--brand-blue);
+  text-decoration: none
+}
+
+a:hover,
+a:focus {
+  text-decoration: underline
+}
+
+/* header */
+.site-header {
+  text-align: center;
+  padding: 1.5rem 1rem;
+  background: linear-gradient(180deg, rgba(242, 251, 255, 0.75), rgba(255, 255, 255, 0.95));
+  border-radius: 12px;
+  margin-bottom: 1rem
+}
+
+.site-header h1 {
+  margin-bottom: .3rem;
+  font-weight: 800;
+  display: inline-block;
+  padding: 6px 10px;
+  background: linear-gradient(90deg, var(--accent-purple), var(--brand-blue) 55%, var(--brand-teal));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent
+}
+
+.site-header .subtitle {
+  color: #334155;
+  font-size: .98rem
+}
+
+/* layout (mobile-first) */
+.layout {
+  display: block
+}
+
+.content {
+  width: 100%
+}
+
+.sidebar {
+  width: 100%;
+  margin-top: 1rem
+}
+
+.sidebar img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+  box-shadow: 0 8px 28px rgba(10, 25, 45, 0.06)
+}
+
+/* hero */
+.hero {
+  display: block;
+  margin-bottom: 1.25rem
+}
+
+.hero-img {
+  width: 100%;
+  border-radius: 12px;
+  object-fit: cover;
+  box-shadow: 0 12px 34px rgba(10, 25, 45, 0.06)
+}
+
+.hero-text {
+  margin-top: .9rem
+}
+
+/* sections */
+.section {
+  margin-bottom: 1.25rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(13, 31, 55, 0.04)
+}
+
+.section h2,
+.section h3 {
+  font-family: "Merriweather", Georgia, serif;
+  font-weight: 700;
+  color: #07243a;
+  margin-bottom: .6rem
+}
+
+.section p,
+.section ul,
+.section ol,
+.section table {
+  margin-top: .75rem;
+  color: #334155
+}
+
+/* images: intelligent defaults (see notes further down) */
+img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  object-fit: cover
+}
+
+.inline-img,
+figure img {
+  margin: 1rem auto;
+  width: clamp(260px, 86%, 900px);
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(12, 34, 56, 0.06)
+}
+
+.hero-img {
+  aspect-ratio: 16/10;
+  max-height: min(60vh, 640px)
+}
+
+.sidebar img {
+  max-width: 300px;
+  aspect-ratio: 1/1
+}
+
+/* image gallery */
+.image-gallery {
+  display: grid;
+  gap: .7rem;
+  grid-template-columns: 1fr
+}
+
+.image-gallery img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+  border-radius: 10px
+}
+
+@media(min-width:var(--bp-md)) {
+  .image-gallery {
+    grid-template-columns: repeat(3, 1fr)
+  }
+
+  .image-gallery img:first-child {
+    grid-column: span 2;
+    grid-row: span 2;
+    min-height: 240px
+  }
+}
+
+@media(max-width:420px) {
+  .hero-img {
+    aspect-ratio: 4/3;
+    max-height: 48vh
+  }
+
+  .image-gallery img {
+    aspect-ratio: 4/3
+  }
+}
+
+/* tables */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0 1.25rem;
+  font-size: 1rem
+}
+
+table th,
+table td {
+  border: 1px solid rgba(13, 31, 55, 0.05);
+  padding: .65rem 1rem;
+  text-align: left
+}
+
+/* buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  padding: .8rem 1rem;
+  border-radius: var(--btn-radius);
+  text-decoration: none;
+  color: #fff;
+  font-weight: 800;
+  transition: transform .12s ease, box-shadow .12s ease
+}
+
+.btn:focus {
+  outline: 3px solid var(--focus-ring);
+  outline-offset: 3px
+}
+
+.btn-depot {
+  background: linear-gradient(90deg, #10b981, #0ea5a3)
+}
+
+.btn-amazon {
+  background: linear-gradient(90deg, #ff9900, #ff7f00)
+}
+
+.btn-shop {
+  background: #fff;
+  color: #083a66;
+  border: 1px solid rgba(11, 75, 120, 0.08);
+  padding: .7rem .95rem;
+  border-radius: 12px
+}
+
+.btn-buy-now {
+  background: linear-gradient(180deg, var(--brand-blue), #004a91);
+  padding: .8rem 1.05rem
+}
+
+.cta-row {
+  display: flex;
+  gap: .6rem;
+  flex-wrap: wrap;
+  margin-top: .8rem
+}
+
+/* compound card */
+.compound {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.98), var(--soft));
+  padding: 14px;
+  border-radius: 12px;
+  border: 1px solid rgba(11, 75, 120, 0.04);
+  box-shadow: 0 8px 28px rgba(10, 25, 45, 0.03);
+  margin-bottom: 12px
+}
+
+/* next/prev floating buttons */
+.next-section-button,
+.prev-section-button {
+  position: fixed;
+  bottom: 18px;
+  padding: 10px 14px;
+  border-radius: 12px;
+  font-weight: 800;
+  color: #fff;
+  text-decoration: none;
+  box-shadow: 0 12px 36px rgba(7, 24, 40, 0.18);
+  transition: transform .12s ease;
+  z-index: 1100
+}
+
+.next-section-button {
+  right: 16px;
+  background: linear-gradient(90deg, var(--brand-teal), #08a7a0)
+}
+
+.prev-section-button {
+  left: 16px;
+  background: linear-gradient(90deg, var(--brand-blue), #005b9a)
+}
+
+@media(max-width:520px) {
+
+  .next-section-button,
+  .prev-section-button {
+    right: 12px;
+    left: 12px;
+    padding: 8px 10px;
+    font-size: .95rem
+  }
+}
+
+/* responsive grid */
+@media(min-width:var(--bp-md)) {
+  .layout {
+    display: grid;
+    grid-template-columns: 1fr 300px;
+    gap: 2rem;
+    align-items: start
+  }
+
+  .hero {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem
+  }
+
+  .hero-text {
+    align-self: center
+  }
+}
+
+@media(min-width:var(--bp-lg)) {
+  .container {
+    padding: 2.25rem
+  }
+
+  .sidebar {
+    position: sticky;
+    top: 110px
+  }
+}
+
+/* Accessibility: reduce motion */
+@media(prefers-reduced-motion:reduce) {
+  * {
+    transition: none !important;
+    animation: none !important
+  }
+}
+
+/* badges & kicker */
+.badge {
+  display: inline-block;
+  padding: .25rem .5rem;
+  background: linear-gradient(90deg, rgba(14, 165, 163, 0.12), rgba(11, 75, 120, 0.06));
+  color: var(--brand-blue);
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: .85rem;
+  margin-left: .6rem
+}
+
+.kicker {
+  font-weight: 800;
+  color: var(--brand-blue)
+}
+
+/* print rules */
+@media print {
+
+  .compound-top-nav,
+  .cta-row,
+  .btn,
+  .btn-buy-now,
+  .next-section-button,
+  .prev-section-button {
+    display: none !important
+  }
+
+  .container {
+    box-shadow: none;
+    background: transparent;
+    padding: 0;
+    margin: 0
+  }
+
+  .site-header {
+    background: transparent;
+    border-radius: 0;
+    padding: 0;
+    margin-bottom: .5rem
+  }
+
+  .site-header h1 {
+    color: #000;
+    -webkit-text-fill-color: #000;
+    background: none;
+    text-shadow: none
+  }
+
+  .image-gallery {
+    display: none
+  }
+
+  .section {
+    border: none;
+    padding: 0;
+    margin: 0 0 12px
+  }
+
+  .mini-table,
+  table {
+    page-break-inside: avoid;
+    font-size: 12pt
+  }
+}
+
+/* Footer: centered, professional */
+.site-footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  background: linear-gradient(180deg, #f6fbff, #ffffff);
+  color: #243b4c;
+  text-align: center;
+  padding: 1.25rem 1rem;
+  font-weight: 400;
+  margin-top: 2rem;
+  font-size: 0.95rem;
+  border-radius: 10px;
+  border: 1px solid rgba(11, 75, 120, 0.04);
+  box-shadow: 0 6px 18px rgba(10, 25, 45, 0.04)
+}
+
+.site-footer .footer-links {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center
+}
+
+.site-footer .footer-links a {
+  color: var(--brand-blue);
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 0.95rem
+}
+
+.site-footer .footer-links a:hover {
+  text-decoration: underline
+}
+
+.site-footer .legal {
+  font-size: 0.9rem;
+  color: var(--muted);
+  max-width: 880px
+}
+
+@media(max-width:520px) {
+  .site-footer {
+    padding: 1rem;
+    font-size: 0.9rem
+  }
+
+  .site-footer .footer-links {
+    gap: 10px
+  }
+}
+
+footer {
+  padding-top: 10px;
+  color: var(--muted);
+  font-size: 0.95rem;
+  text-align: center;
+  border-top: 1px solid rgba(11, 75, 120, 0.03);
+  margin-top: 20px
+}
+
+/* === Intelligent responsive image rules (additional polish) === */
+/* Use data-aspect attributes if you want to force a specific ratio: data-aspect="16/9" */
+.article-image,
+.inline-img,
+figure img {
+  width: clamp(260px, 86%, 900px);
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 1rem auto;
+  border-radius: 12px;
+  object-fit: cover;
+  box-shadow: 0 10px 30px rgba(12, 34, 56, 0.06)
+}
+
+/* preserve layout space: use aspect-ratio when available or require width/height attributes */
+.article-image[style],
+.inline-img[style] {
+  aspect-ratio: attr(data-aspect-ratio, 16/9)
+}
+
+/* hero image tighter control */
+.hero-img {
+  width: 100%;
+  aspect-ratio: 16/10;
+  max-height: min(60vh, 640px);
+  object-fit: cover;
+  border-radius: 12px
+}
+
+/* sidebar thumbnails consistent */
+.sidebar img {
+  width: 100%;
+  max-width: 300px;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  border-radius: 10px
+}
+
+/* gallery tiles */
+.image-gallery {
+  display: grid;
+  gap: .7rem;
+  grid-template-columns: 1fr
+}
+
+.image-gallery img {
+  width: 100%;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+  border-radius: 10px
+}
+
+@media(min-width:768px) {
+  .image-gallery {
+    grid-template-columns: repeat(3, 1fr)
+  }
+
+  .image-gallery img:first-child {
+    grid-column: span 2;
+    grid-row: span 2;
+    min-height: 240px
+  }
+}
+
+@media(max-width:420px) {
+  .hero-img {
+    aspect-ratio: 4/3;
+    max-height: 48vh
+  }
+
+  .image-gallery img {
+    aspect-ratio: 4/3
+  }
+}
+
+/* Lazy-loading hint class for below-the-fold images */
+.lazy-hidden {
+  opacity: 0;
+  transform: translateY(8px)
+}
+
+.lazy-visible {
+  opacity: 1;
+  transform: none;
+  transition: opacity .36s ease, transform .36s ease
+}
+
+/* small helpers */
+code {
+  background: #f6f8fb;
+  padding: .15rem .4rem;
+  border-radius: 6px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Roboto Mono, Courier New, monospace
+}
+
+/* accessibility focus polish */
+:focus {
+  outline-offset: 3px
+}
+
+a:focus,
+button:focus,
+.btn:focus {
+  outline: 3px solid var(--focus-ring);
+  border-radius: 10px
+}
+
+/* legacy helper */
+img {
+  max-width: 100%;
+  height: auto
+}
+
+/* end of file */
