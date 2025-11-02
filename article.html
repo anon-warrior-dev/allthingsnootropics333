@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>All Articles — All Things Nootropics</title>
+
+    <!-- Inline CSS as requested: makes article cards list horizontally with responsive wrapping -->
+    <style>
+      /* Container: horizontal layout with wrapping */
+      .articles-grid {
+        display: flex;
+        gap: 16px;
+        flex-wrap: wrap;
+        align-items: stretch; /* equal height columns where possible */
+        justify-content: flex-start;
+        padding: 18px;
+      }
+
+      /* Article card: controls width on different breakpoints */
+      .article-card {
+        background: #ffffff;
+        border: 1px solid rgba(0,0,0,0.06);
+        border-radius: 10px;
+        padding: 18px;
+        box-shadow: 0 8px 20px rgba(10,25,45,0.04);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        /* Default: three columns on large screens */
+        flex: 0 0 calc(33.333% - 16px);
+        box-sizing: border-box;
+        min-height: 150px;
+      }
+
+      /* Headings and excerpt */
+      .article-card h3 {
+        margin: 0 0 8px;
+        font-size: 1.05rem;
+        color: #0b3b57;
+      }
+      .article-card p {
+        color: #475569;
+        margin: 0 0 12px;
+        line-height: 1.45;
+        flex-grow: 1;
+      }
+
+      /* CTA button */
+      .cta-button {
+        display: inline-block;
+        text-decoration: none;
+        background: linear-gradient(90deg,#0ea5a3,#0fb07f);
+        color: #fff;
+        padding: 10px 14px;
+        border-radius: 10px;
+        font-weight: 700;
+        text-align: center;
+        box-shadow: 0 8px 22px rgba(11,75,120,0.08);
+      }
+      .cta-button:hover,
+      .cta-button:focus {
+        transform: translateY(-3px);
+      }
+
+      /* Responsive breakpoints */
+      @media (max-width: 1000px) {
+        /* two columns */
+        .article-card { flex: 0 0 calc(50% - 16px); }
+      }
+
+      @media (max-width: 640px) {
+        /* single column on phones */
+        .articles-grid { padding: 12px; gap: 12px; }
+        .article-card { flex: 0 0 100%; }
+      }
+
+      /* Small polish: page wrapper */
+      .wrapper {
+        max-width: 1200px;
+        margin: 18px auto;
+        padding: 8px;
+        font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      }
+      header { display: flex; align-items: center; justify-content: space-between; gap:12px; flex-wrap:wrap; margin-bottom: 12px; }
+      header h1 { font-size: 1.35rem; margin: 0; color: #07243a; }
+      header nav a { text-decoration: none; color: #0b61b2; background: transparent; padding: 8px 10px; border-radius: 8px; font-weight:600; }
+      footer { margin-top: 18px; color:#94a3b8; font-size: .95rem; text-align:center; padding: 12px 0; }
+    </style>
+
+</head>
+
+<body>
+    <div class="wrapper">
+        <header>
+            <h1>All Things Nootropics — Articles</h1>
+            <nav>
+                <a href="index.html" class="navbar-button">Home</a>
+                <a href="sections/section1/nootropics list.html" class="navbar-button">Nootropic List</a>
+            </nav>
+        </header>
+
+        <main>
+            <section class="articles-grid" aria-label="All articles">
+
+                <!-- Article card 1 -->
+                <article class="article-card">
+                    <div>
+                      <h3>All Day Energy</h3>
+                      <p>Practical strategies, supplements and routines that support sustained daytime energy without crashes.</p>
+                    </div>
+                    <a class="cta-button" href="articles/all-day-energy.html">View article</a>
+                </article>
+
+                <!-- Article card 2 -->
+                <article class="article-card">
+                    <div>
+                      <h3>Brain Power</h3>
+                      <p>Evidence-based nootropics, lifestyle hacks and stack ideas for sharper focus and memory.</p>
+                    </div>
+                    <a class="cta-button" href="article/brain-power.html">View article</a>
+                </article>
+
+                <!-- Article card 3 -->
+                <article class="article-card">
+                    <div>
+                      <h3>Sleep Aid</h3>
+                      <p>Deep dive into natural sleep aids, timing, and protocols to improve sleep architecture and recovery.</p>
+                    </div>
+                    <a class="cta-button" href="article/sleep-aid.html">View article</a>
+                </article>
+
+                <!-- Article card 4 -->
+                <article class="article-card">
+                    <div>
+                      <h3>Preworkout</h3>
+                      <p>Safe stimulant and stimulant-free preworkout options to boost performance and focus at the gym.</p>
+                    </div>
+                    <a class="cta-button" href="article/preworkout.html">View article</a>
+                </article>
+
+                <!-- Article card 5 -->
+                <article class="article-card">
+                    <div>
+                      <h3>9-MeBC Overview</h3>
+                      <p>Comprehensive review of 9-Methyl-β-Carboline (9-Me-BC): mechanisms, preclinical evidence and nootropic context.</p>
+                    </div>
+                    <a class="cta-button" href="article/9-mebc.html">View article</a>
+                </article>
+
+                <!-- Article card 6 -->
+                <article class="article-card">
+                    <div>
+                      <h3>Heart health</h3>
+                      <p>Supplements and lifestyle changes that support cardiovascular resilience, lipids and blood pressure.</p>
+                    </div>
+                    <a class="cta-button" href="article/heart-health.html">View article</a>
+                </article>
+
+                <!-- Article card 7 -->
+                <article class="article-card">
+                    <div>
+                      <h3>Adaptogens 2026</h3>
+                      <p>Long-form feature on adaptogens — Reishi, Ashwagandha, Ginseng and the science behind resilience.</p>
+                    </div>
+                    <a class="cta-button" href="article/adaptogens_2026.html">View article</a>
+                </article>
+
+                <!-- Article card 8 -->
+                <article class="article-card">
+                    <div>
+                      <h3>Joint health 2026</h3>
+                      <p>A modern guide to joint supplements (glucosamine, curcumin, HA, boswellia) and evidence-based stacks.</p>
+                    </div>
+                    <a class="cta-button" href="article/joint-health.html">View article</a>
+                </article>
+
+                <!-- Article card 9 -->
+                <article class="article-card">
+                    <div>
+                      <h3>Reishi Mushroom</h3>
+                      <p>Deep exploration of Ganoderma lucidum — history, chemistry, protocols and sourcing guidance.</p>
+                    </div>
+                    <a class="cta-button" href="article/reishi.html">View article</a>
+                </article>
+
+                <!-- Add more article cards as needed -->
+
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2025 All Things Nootropics.</p>
+        </footer>
+    </div>
+</body>
+
+</html>
