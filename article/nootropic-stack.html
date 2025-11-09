@@ -1,0 +1,291 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>NeuroWeave — Nootropic Library (videos, images, buy links)</title>
+  <meta name="description" content="Nootropic reference page with robust YouTube embeds (fallback thumbnails), images for each compound, and Buy links (Nootropics Depot & Amazon)." />
+  <style>
+    :root{
+      --brand-blue:#0b61b2;
+      --brand-green:#0ea5a3;
+      --muted:#556b75;
+      --card-bg:#fff;
+      --maxw:1200px;
+      --radius:12px;
+      --focus:rgba(14,165,163,0.18);
+      --gap:16px;
+    }
+    html,body{height:100%;margin:0;padding:0;font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial;background:#f3fbff;color:#0f172a;}
+    .wrap{max-width:var(--maxw);margin:28px auto;padding:20px;}
+    header{display:flex;flex-direction:column;gap:.4rem;margin-bottom:18px}
+    header h1{margin:0;font-size:1.6rem}
+    header p{margin:0;color:var(--muted)}
+    .grid{display:grid;gap:var(--gap);grid-template-columns:repeat(auto-fit,minmax(320px,1fr));margin-top:18px;}
+    .card{background:var(--card-bg);border-radius:var(--radius);padding:14px;box-shadow:0 10px 30px rgba(12,34,56,0.06);border:1px solid rgba(11,75,120,0.04);display:flex;flex-direction:column;min-height:420px;}
+    .card h2{font-size:1.05rem;margin:0 0 8px}
+    .meta{color:var(--muted);font-size:.95rem;margin-bottom:8px}
+    .compound-image{width:100%;height:220px;object-fit:cover;border-radius:10px;display:block;margin-bottom:12px;box-shadow:0 8px 28px rgba(10,25,45,0.04)}
+    .description{flex:1;color:#334155}
+    .yt-wrapper{position:relative;width:100%;border-radius:10px;overflow:hidden;background:#000;margin:12px 0;min-height:140px}
+    .yt-placeholder{display:block;width:100%;cursor:pointer;position:relative;background:#000;overflow:hidden;border-radius:8px}
+    .yt-placeholder img{width:100%;height:auto;display:block;object-fit:cover}
+    .yt-play-btn{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:64px;height:64px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,0.96);box-shadow:0 12px 28px rgba(0,0,0,0.16)}
+    .yt-play-btn:after{content:"";display:inline-block;margin-left:6px;border-style:solid;border-width:10px 0 10px 14px;border-color:transparent transparent transparent rgba(10,20,40,0.95)}
+    .yt-caption{font-size:.92rem;color:var(--muted);margin-top:8px}
+    .btn-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:8px}
+    .btn{display:inline-flex;align-items:center;gap:.5rem;padding:.6rem .9rem;border-radius:10px;font-weight:800;text-decoration:none;color:#fff;box-shadow:0 10px 30px rgba(12,34,56,0.06)}
+    .btn-depot{background:linear-gradient(90deg,#10b981,#0ea5a3)}
+    .btn-amazon{background:linear-gradient(90deg,#ff9900,#ff7f00)}
+    .btn:focus{outline:3px solid var(--focus);outline-offset:3px}
+    .small{color:var(--muted);font-size:.92rem;margin-top:6px}
+    footer{margin-top:22px;color:var(--muted);font-size:.95rem;text-align:center}
+    /* responsive */
+    @media(max-width:780px){
+      .compound-image{height:160px}
+      .yt-wrapper{min-height:120px}
+      .card{min-height:420px}
+    }
+    /* reduced motion preference */
+    @media(prefers-reduced-motion:reduce){
+      .yt-placeholder, iframe { transition:none!important; animation:none!important; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap" role="main">
+    <header>
+      <h1>NeuroWeave — Nootropic Media & Shop</h1>
+      <p>Robust YouTube embeds (thumbnail fallback if embedding is blocked) + images and quick Buy links for each compound.</p>
+    </header>
+
+    <section class="grid" aria-live="polite">
+
+      <!-- Omega-3 -->
+      <article class="card" id="omega-card">
+        <h2>Omega-3 (EPA & DHA)</h2>
+        <div class="meta">Membrane fluidity, anti-inflammatory support, cognitive & cardiovascular benefits.</div>
+        <img class="compound-image" src="https://cdn.shopify.com/s/files/1/0511/3059/7560/files/DIG_PLP_Newoldproduct_omega3_JD_2000x2000_a76282a8-fced-48a9-b26c-bc41e4b3ce98.jpg?v=1718812497" alt="Omega-3 supplement bottle / fish oil">
+        <div class="description">
+          <p>EPA and DHA are foundational fatty acids for brain health and inflammation control. Regular intake supports synaptic function, mood regulation and joint comfort. High-quality oils should be third-party tested for purity and heavy metals.</p>
+
+          <div class="yt-wrapper" data-video-id="9LvGiiZyn-M" data-caption="Omega-3 — benefits & science"></div>
+
+          <div class="btn-row" aria-label="Buy Omega-3">
+            <a class="btn btn-depot" href="https://nootropicsdepot.com/search?q=omega+3" target="_blank" rel="noopener noreferrer">Buy — Nootropics Depot</a>
+            <a class="btn btn-amazon" href="https://www.amazon.com/s?k=omega+3" target="_blank" rel="noopener noreferrer">Buy — Amazon</a>
+          </div>
+          <p class="small">Recommended: 500–1500 mg combined EPA+DHA/day (adjust per clinician advice).</p>
+        </div>
+      </article>
+
+      <!-- Rhodiola -->
+      <article class="card" id="rhodiola-card">
+        <h2>Rhodiola rosea</h2>
+        <div class="meta">Adaptogen for fatigue resilience, mental stamina, and mood stability.</div>
+        <img class="compound-image" src="https://www.shutterstock.com/shutterstock/videos/3398544003/thumb/1.jpg?ip=x480" alt="Rhodiola root / plant">
+        <div class="description">
+          <p>Rhodiola is commonly used to reduce mental fatigue and support performance under stress. Use standardized extracts (typically 3% rosavins / 1% salidroside) for consistency.</p>
+
+          <div class="yt-wrapper" data-video-id="H0s6vWcTwi4" data-caption="Rhodiola — adaptogen overview"></div>
+
+          <div class="btn-row" aria-label="Buy Rhodiola">
+            <a class="btn btn-depot" href="https://nootropicsdepot.com/search?q=rhodiola" target="_blank" rel="noopener noreferrer">Buy — Nootropics Depot</a>
+            <a class="btn btn-amazon" href="https://www.amazon.com/s?k=rhodiola" target="_blank" rel="noopener noreferrer">Buy — Amazon</a>
+          </div>
+          <p class="small">Typical dose: 200–400 mg/day standardized extract; start low if caffeine-sensitive.</p>
+        </div>
+      </article>
+
+      <!-- L-Tyrosine -->
+      <article class="card" id="tyrosine-card">
+        <h2>L-Tyrosine</h2>
+        <div class="meta">Amino acid precursor for dopamine & norepinephrine — useful before demanding cognitive work.</div>
+        <img class="compound-image" src="https://www.shutterstock.com/image-vector/tyrosine-ltyrosine-tyr-y-amino-260nw-2115115151.jpg" alt="L-Tyrosine molecular art / supplement">
+        <div class="description">
+          <p>L-Tyrosine helps maintain catecholamine levels during stress or heavy cognitive load. Many users take a dose before demanding tasks to preserve focus and working memory.</p>
+
+          <div class="yt-wrapper" data-video-id="brAA6O_v7os" data-caption="L-Tyrosine — overview and uses"></div>
+
+          <div class="btn-row" aria-label="Buy L-Tyrosine">
+            <a class="btn btn-depot" href="https://nootropicsdepot.com/search?q=l+tyrosine" target="_blank" rel="noopener noreferrer">Buy — Nootropics Depot</a>
+            <a class="btn btn-amazon" href="https://www.amazon.com/s?k=l+tyrosine" target="_blank" rel="noopener noreferrer">Buy — Amazon</a>
+          </div>
+          <p class="small">Typical acute dose: 100–300 mg before performance. Consult a clinician if on thyroid or catecholamine-affecting medications.</p>
+        </div>
+      </article>
+
+      <!-- Lion's Mane -->
+      <article class="card" id="lionsmane-card">
+        <h2>Lion’s Mane (Hericium erinaceus)</h2>
+        <div class="meta">Neurotrophic mushroom — NGF and BDNF support, long-term cognitive resilience.</div>
+        <img class="compound-image" src="https://t4.ftcdn.net/jpg/01/78/25/87/360_F_178258723_TzOm9N6LPKElMqHd8aM2M36YkfT5jhE2.jpg" alt="Lion's Mane mushroom / extract">
+        <div class="description">
+          <p>Lion’s Mane contains compounds shown in preclinical work to support nerve growth factor pathways and neuronal repair. Human trials suggest benefits for mild cognitive symptoms and mood after weeks of consistent use.</p>
+
+          <div class="yt-wrapper" data-video-id="Clo0kp4ixJU" data-caption="Lion's Mane — neurotrophic benefits"></div>
+
+          <div class="btn-row" aria-label="Buy Lion's Mane">
+            <a class="btn btn-depot" href="https://nootropicsdepot.com/search?q=lion%27s+mane" target="_blank" rel="noopener noreferrer">Buy — Nootropics Depot</a>
+            <a class="btn btn-amazon" href="https://www.amazon.com/s?k=lion%27s+mane" target="_blank" rel="noopener noreferrer">Buy — Amazon</a>
+          </div>
+          <p class="small">Common dose: 500–1500 mg/day (standardized extracts). Allow 6–12 weeks for cumulative effects.</p>
+        </div>
+      </article>
+
+      <!-- Uridine Monophosphate -->
+      <article class="card" id="uridine-card">
+        <h2>Uridine Monophosphate</h2>
+        <div class="meta">Nucleotide precursor for phospholipids — supports synaptogenesis when combined with DHA & choline.</div>
+        <img class="compound-image" src="https://m.media-amazon.com/images/I/71dFkFdf8xL._UF894%2C1000_QL80_.jpg" alt="Uridine monophosphate product image">
+        <div class="description">
+          <p>Uridine provides building blocks for membrane phospholipids and supports synaptic formation when paired with DHA and choline (citicoline). Many users take it as a long-term structural support for learning and plasticity.</p>
+
+          <!-- No supplied video for uridine; keep placeholder info -->
+          <div class="yt-caption">No curated video embed for uridine in this edition.</div>
+
+          <div class="btn-row" aria-label="Buy Uridine">
+            <a class="btn btn-depot" href="https://nootropicsdepot.com/search?q=uridine" target="_blank" rel="noopener noreferrer">Buy — Nootropics Depot</a>
+            <a class="btn btn-amazon" href="https://www.amazon.com/s?k=uridine+monophosphate" target="_blank" rel="noopener noreferrer">Buy — Amazon</a>
+          </div>
+          <p class="small">Common dose range: 150–250 mg/day (varies by product). Consult clinician when combining with prescription meds.</p>
+        </div>
+      </article>
+
+      <!-- Citicoline (CDP-Choline) -->
+      <article class="card" id="cdp-card">
+        <h2>Citicoline (CDP-Choline)</h2>
+        <div class="meta">Choline donor for acetylcholine & membrane synthesis — attention & recovery support.</div>
+        <img class="compound-image" src="https://m.media-amazon.com/images/I/817P02HLdGL._AC_UF1000%2C1000_QL80_.jpg" alt="CDP-Choline / Citicoline product image">
+        <div class="description">
+          <p>Citicoline increases brain choline availability, supports attention and neural membrane health. It's often used as a foundational cognitive support for learners and professionals.</p>
+
+          <div class="yt-wrapper" data-video-id="5COp-QfjKpc" data-caption="Citicoline (CDP-Choline) — overview"></div>
+
+          <div class="btn-row" aria-label="Buy Citicoline">
+            <a class="btn btn-depot" href="https://nootropicsdepot.com/search?q=citicoline" target="_blank" rel="noopener noreferrer">Buy — Nootropics Depot</a>
+            <a class="btn btn-amazon" href="https://www.amazon.com/s?k=citicoline" target="_blank" rel="noopener noreferrer">Buy — Amazon</a>
+          </div>
+          <p class="small">Typical dose: 250–500 mg/day. Safe and well-tolerated; useful with uridine + DHA for structural gains.</p>
+        </div>
+      </article>
+
+    </section>
+
+    <footer>
+      <p><strong>Note:</strong> If a video owner blocks embedding, the player will be replaced with a clickable thumbnail that opens the video on YouTube (this avoids the YouTube embed error box). Always verify product COAs and consult a healthcare professional before starting new supplements.</p>
+    </footer>
+  </div>
+
+  <!-- Robust YouTube embed loader + graceful thumbnail fallback -->
+  <script>
+  (function(){
+    // Load the IFrame API
+    var tag = document.createElement('script');
+    tag.src = "https://www.youtube.com/iframe_api";
+    tag.async = true;
+    document.head.appendChild(tag);
+
+    function thumbUrl(id){
+      return "https://i.ytimg.com/vi/" + id + "/maxresdefault.jpg";
+    }
+    function createFallback(container, vid, caption){
+      container.innerHTML = "";
+      var a = document.createElement('a');
+      a.className = "yt-placeholder";
+      a.href = "https://www.youtube.com/watch?v=" + vid;
+      a.target = "_blank";
+      a.rel = "noopener noreferrer";
+      a.setAttribute('aria-label', caption ? (caption + " — opens on YouTube") : "Open video on YouTube");
+
+      var img = document.createElement('img');
+      img.alt = caption || "YouTube video";
+      img.src = thumbUrl(vid);
+      img.onerror = function(){ this.onerror = null; this.src = "https://i.ytimg.com/vi/" + vid + "/hqdefault.jpg"; };
+
+      var play = document.createElement('span');
+      play.className = "yt-play-btn";
+
+      a.appendChild(img);
+      a.appendChild(play);
+      container.appendChild(a);
+
+      if(caption){
+        var cap = document.createElement('div');
+        cap.className = "yt-caption";
+        cap.textContent = caption + " — opens on YouTube";
+        container.appendChild(cap);
+      }
+    }
+
+    window.onYouTubeIframeAPIReady = function(){
+      var wrappers = document.querySelectorAll('.yt-wrapper');
+      wrappers.forEach(function(container, idx){
+        var vid = container.dataset.videoId;
+        var caption = container.dataset.caption || "";
+
+        // If no video id, show nothing
+        if(!vid){ 
+          // nothing to embed
+          return;
+        }
+
+        var playerId = "yt-player-" + idx;
+        var pdiv = document.createElement('div');
+        pdiv.id = playerId;
+        container.appendChild(pdiv);
+
+        try {
+          var player = new YT.Player(playerId, {
+            height: '480',
+            width: '100%',
+            videoId: vid,
+            host: 'https://www.youtube.com',
+            playerVars: {
+              rel: 0,
+              modestbranding: 1,
+              controls: 1,
+              enablejsapi: 1,
+              origin: location.origin
+            },
+            events: {
+              onReady: function(e){
+                // ready; do nothing (no autoplay)
+              },
+              onError: function(e){
+                createFallback(container, vid, caption);
+              }
+            }
+          });
+
+          // Safety timeout: if iframe not loaded properly (CSP, blocked), fallback
+          setTimeout(function(){
+            var iframe = container.querySelector('iframe');
+            if(!iframe || (iframe.src && iframe.src.indexOf(vid) === -1)){
+              createFallback(container, vid, caption);
+            }
+          }, 3500);
+
+        } catch(err){
+          createFallback(container, vid, caption);
+        }
+      });
+    };
+
+    // If YT API never loads — fallback after short timeout
+    setTimeout(function(){
+      if(typeof YT === 'undefined' || !YT || !YT.Player){
+        var wrappers = document.querySelectorAll('.yt-wrapper');
+        wrappers.forEach(function(container){
+          if(container.children.length === 0){
+            var vid = container.dataset.videoId;
+            var caption = container.dataset.caption || "";
+            if(vid) createFallback(container, vid, caption);
+          }
+        });
+      }
+    }, 3000);
+  })();
+  </script>
+</body>
+</html>
