@@ -1,3 +1,10 @@
 User-agent: *
 Allow: /
 Sitemap: https://www.allthingsnootropics.org/sitemap.xml
+
+User-agent: *
+Allow: /favicon.ico
+Allow: /apple-touch-icon.png
+Allow: /android-chrome*.png
+Allow: /favicon-*.png
+Allow: /mstile-*.png
